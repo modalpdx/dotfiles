@@ -15,6 +15,19 @@ set background=light
 set lines=45
 colo desert " colorscheme
 
+" set up a scratch buffer
+function! NewScratch()
+    if ( !bufexists('[Scratch]') )
+        new [Scratch]
+        setlocal buftype=nofile bufhidden=hide switchbuf=useopen noswapfile nowrap
+    else
+        sb \[Scratch]
+        " Figure out how to load the hidden scratch buffer
+    endif
+endfunction
+" CTRL-SHIFT-S runs NewScratch()
+nmap <C-S-s> :call NewScratch()<CR>
+
 " ==================================================
 " STATUSLINE STUFF (must go below colorscheme!)
 " ==================================================
