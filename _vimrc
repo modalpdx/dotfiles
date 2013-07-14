@@ -15,7 +15,6 @@ set background=light
 set lines=45
 colo desert " colorscheme
 
-
 " ==================================================
 " STATUSLINE STUFF (must go below colorscheme!)
 " ==================================================
@@ -79,29 +78,31 @@ set encoding=utf-8
 set autoread<
 
 " Auto-run NERDtree
-" autocmd VimEnter * exe 'NERDTree' | wincmd l 
 autocmd VimEnter * exe 'NERDTree'
-" Map backslash to toggle NERDTree
-"map <Bslash> :exe ':NERDTreeToggle'<CR>
+
+" Map CTRL-\ to toggle NERDTree
 nmap <C-BSlash> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
-"nmap <C-BSlash> :exe ':NERDTreeToggle'<CR>
 
-" For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
-" let &guioptions = substitute(&guioptions, "t", "", "g")
-"set guifont=-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
-"set guifont=-schumacher-clean-medium-r-normal-*-*-130-*-*-c-*-iso646.1991-irv
-
-" Open current buffer in a web browser
-" Key command: 'CMD+1 s' for Safari, 'CMD+1 f' for Firefox
-noremap <silent> <D-1>f :exe ':silent !open -a /Applications/Firefox.app %'<CR>"
-noremap <silent> <D-1>s :exe ':silent !open -a /Applications/Safari.app %'<CR>"
+" OS specific stuff, like fonts? Sure.
+if has('mac')
+    " Open current buffer in a web browser
+    " Key command: 'CMD+1 s' for Safari, 'CMD+1 f' for Firefox
+    noremap <silent> <D-1>f :exe ':silent !open -a /Applications/Firefox.app %'<CR>"
+    noremap <silent> <D-1>s :exe ':silent !open -a /Applications/Safari.app %'<CR>"
+elseif has('win32')
+    " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
+    " let &guioptions = substitute(&guioptions, "t", "", "g")
+    "set guifont=-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
+    "set guifont=-schumacher-clean-medium-r-normal-*-*-130-*-*-c-*-iso646.1991-irv
+else
+    " do Linux stuff, I guess
+endif
 
 " Don't use Ex mode, use Q for formatting
 map Q gq
 
 " Make p in Visual mode replace the selected text with the "" register.
 vnoremap p <Esc>:let current_reg = @"<CR>gvdi<C-R>=current_reg<CR><Esc>
-
 
 " Only do this part when compiled with support for autocommands.
 if has("autocmd")
