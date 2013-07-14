@@ -15,18 +15,27 @@ set background=light
 set lines=45
 colo desert " colorscheme
 
-" set up a scratch buffer
+" ==================================================
+" SCRATCH BUFFER STUFF
+" ==================================================
+
 function! NewScratch()
-    if ( !bufexists('[Scratch]') )
+    if ( !bufexists('[Scratch]') )  
+        "create a new scratch buffer
         new [Scratch]
         setlocal buftype=nofile bufhidden=hide switchbuf=useopen noswapfile nowrap
-    else
+    else  
+        "open the existing scratch buffer
         sb \[Scratch]
-        " Figure out how to load the hidden scratch buffer
     endif
 endfunction
+
 " CTRL-SHIFT-S runs NewScratch()
 nmap <C-S-s> :call NewScratch()<CR>
+
+" ==================================================
+" END OF SCRATCH BUFFER STUFF
+" ==================================================
 
 " ==================================================
 " STATUSLINE STUFF (must go below colorscheme!)
@@ -66,7 +75,6 @@ inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 " ==================================================
 " END OF STATUSLINE STUFF
 " ==================================================
-
 
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
