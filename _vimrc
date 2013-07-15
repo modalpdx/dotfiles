@@ -105,7 +105,7 @@ autocmd VimEnter * exe 'NERDTree'
 nmap <C-BSlash> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 
 " OS specific stuff, like fonts? Sure.
-if has('mac')
+if has('macunix')
     " Open current buffer in a web browser
     " Key command: 'CMD+1 s' for Safari, 'CMD+1 f' for Firefox
     noremap <silent> <D-1>f :exe ':silent !open -a /Applications/Firefox.app %'<CR>"
@@ -115,8 +115,9 @@ elseif has('win32')
     " let &guioptions = substitute(&guioptions, "t", "", "g")
     "set guifont=-dec-terminal-medium-r-normal-*-*-140-*-*-c-*-iso8859-1
     "set guifont=-schumacher-clean-medium-r-normal-*-*-130-*-*-c-*-iso646.1991-irv
-else
-    " do Linux stuff, I guess
+elseif has('unix')
+    "yeah, this guifont thing should go in gvimrc instead
+    set guifont=Ubuntu\ Mono\ 12
 endif
 
 " Don't use Ex mode, use Q for formatting
