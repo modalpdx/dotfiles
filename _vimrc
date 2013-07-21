@@ -13,7 +13,6 @@ filetype plugin on
 
 set background=light
 set lines=45
-colo desert " colorscheme
 
 " ==================================================
 " SCRATCH BUFFER STUFF
@@ -38,8 +37,11 @@ nmap <C-S-s> :call NewScratch()<CR>
 " ==================================================
 
 " ==================================================
-" STATUSLINE STUFF (must go below colorscheme!)
+" COLOR STUFF
 " ==================================================
+
+" Color scheme
+colo desert 
 
 set laststatus=2        " always have a status line
 set statusline=         " start with a fresh statusline (for reloads)
@@ -73,7 +75,7 @@ au InsertLeave * call InsertLeaveActions()
 inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 
 " ==================================================
-" END OF STATUSLINE STUFF
+" END OF COLOR STUFF
 " ==================================================
 
 " au BufWinLeave * mkview
