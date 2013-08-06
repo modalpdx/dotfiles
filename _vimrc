@@ -48,7 +48,7 @@ colo desert
 
 set laststatus=2        " always have a status line
 set statusline=         " start with a fresh statusline (for reloads)
-set statusline=\ %2*%F\ %3*%m%r%h%w%=%1*[\ %2*FORMAT=%{&ff}\ %1*][\ %2*TYPE=%Y\ %1*][\ %2*line\ %02l\ (%p%%)\ %1*]\ 
+set statusline=\ %2*%F\ %3*%m%r%h%w\ %1*(^E:Files)\ %=%1*[\ %2*FORMAT=%{&ff}\ %1*][\ %2*TYPE=%Y\ %1*][\ %2*line\ %02l\ (%p%%)\ %1*]\ 
 
 " Mode Indication 
 function! InsertStatuslineColor(mode)
