@@ -13,7 +13,7 @@
 "filetype plugin on
 "set background=dark
 "colo desert
-set guifont=Monaco:h12
+"set guifont=Monaco:h12
 "set guifont=Monaco:h11:cANSI
 "set guifont=-schumacher-clean-medium-r-normal-*-*-130-*-*-c-*-iso646.1991-irv
 "set guifont=vt100:h12:cANSI
