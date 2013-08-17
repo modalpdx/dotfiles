@@ -12,7 +12,7 @@ filetype indent on
 filetype plugin on
 
 set background=light
-set lines=45
+set lines=50
 
 " add a column indicator
 set cul cuc 
@@ -85,8 +85,6 @@ inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 " NETRW STUFF (File Explorer)
 " ==================================================
 
-" WHO NEEDS NERDTREE WHEN YOU HAVE NETRW?? Seriously.
-
 " Toggle Vexplore with Ctrl-E
 function! ToggleVExplorer()
   if exists("t:expl_buf_num")
@@ -128,13 +126,11 @@ set autochdir
 " CLANG_COMPLETE STUFF
 " ==================================================
 
-/*
-let g:clang_user_options='|| exit 0'
-let g:clang_complete_auto = 1
-let g:clang_complete_copen = 1
-let g:clang_debug = 1
-let g:clang_use_library = 1
-*/
+" let g:clang_user_options='|| exit 0'
+" let g:clang_complete_auto = 1
+" let g:clang_complete_copen = 1
+" let g:clang_debug = 1
+" let g:clang_use_library = 1
 
 " ==================================================
 " END OF CLANG_COMPLETE STUFF
@@ -161,12 +157,6 @@ set ruler			" show the cursor position all the time
 set mouse=a			" use a mouse
 set encoding=utf-8
 set autoread<
-
-" Auto-run NERDtree
-"autocmd VimEnter * exe 'NERDTree'
-
-" Map CTRL-\ to toggle NERDTree
-"nmap <C-BSlash> :NERDTreeToggle \| :silent NERDTreeMirror<CR>
 
 " OS specific stuff, like fonts? Sure.
 if has('macunix')

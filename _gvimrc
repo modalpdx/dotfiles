@@ -20,16 +20,9 @@
 "set guifont=vt100:h12:cANSI
 " guioption r is right scrollbar
 set guioptions=er
-set co=170
-set lines=52
+set co=100
+set lines=50
 set nu
-
-" Auto-run NERDtree
-" autocmd VimEnter * exe 'NERDTree' | wincmd l 
-"autocmd VimEnter * exe 'NERDTree'
-
-" Map CMD-\ to toggle NERDTree
-"map <silent> <D-\> :NERDTreeToggle<CR>
 
 finish
 
