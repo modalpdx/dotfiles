@@ -15,7 +15,7 @@ set background=light
 set lines=45
 
 " add a column indicator
-" set cuc 
+set cul cuc 
 
 " ==================================================
 " SCRATCH BUFFER STUFF
@@ -121,6 +121,23 @@ set autochdir
 
 " ==================================================
 " END OF NETRW STUFF
+" ==================================================
+
+
+" ==================================================
+" CLANG_COMPLETE STUFF
+" ==================================================
+
+/*
+let g:clang_user_options='|| exit 0'
+let g:clang_complete_auto = 1
+let g:clang_complete_copen = 1
+let g:clang_debug = 1
+let g:clang_use_library = 1
+*/
+
+" ==================================================
+" END OF CLANG_COMPLETE STUFF
 " ==================================================
 
 " au BufWinLeave * mkview
