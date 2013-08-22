@@ -117,10 +117,14 @@ let g:netrw_liststyle=3
 " Change directory to the current buffer when opening files.
 set autochdir
 
+" Not really a netrw thing, but it's a buffer thing so it's here.
+" Hit <leader>l (default: \l) to get a list of buffers, then type
+" the number of the buffer you want.
+noremap <leader>l :ls<CR>:b<space>
+
 " ==================================================
 " END OF NETRW STUFF
 " ==================================================
-
 
 " ==================================================
 " CLANG_COMPLETE STUFF
@@ -138,6 +142,7 @@ set autochdir
 
 " au BufWinLeave * mkview
 " au BufWinEnter * silent loadview
+
 
 set tw=74			" wrap text at the 74th column
 set si				" sticky autoindent
