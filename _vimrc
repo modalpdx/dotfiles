@@ -128,6 +128,10 @@ set autochdir
 " the number of the buffer you want.
 noremap <leader>l :ls<CR>:b<space>
 
+" Also not netrw, but it's navigation of files, so...
+nmap <Leader>] gt
+nmap <Leader>[ gT
+
 " ==================================================
 " END OF NETRW STUFF
 " ==================================================
