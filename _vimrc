@@ -12,7 +12,7 @@ filetype indent on
 filetype plugin on
 
 set background=light
-set lines=50
+"set lines=50
 
 " add a column indicator
 set cul cuc 
@@ -44,7 +44,7 @@ nmap <C-S-s> :call NewScratch()<CR>
 " ==================================================
 
 " Color scheme
-colo desert 
+colo jellybeans
 
 set laststatus=2        " always have a status line
 set statusline=         " start with a fresh statusline (for reloads)
@@ -106,10 +106,16 @@ function! ToggleVExplorer()
 endfunction
 map <silent> <C-E> :call ToggleVExplorer()<CR>
 
+" Make the browsing directory the current directory
+let g:netrw_keepdir = 0
+
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
 let g:netrw_browse_split = 4
 let g:netrw_altv = 1
+
+" Load files in the same window as netrw
+" let g:netrw_browse_split = 0
 
 " Default to tree mode
 let g:netrw_liststyle=3
@@ -130,11 +136,11 @@ noremap <leader>l :ls<CR>:b<space>
 " CLANG_COMPLETE STUFF
 " ==================================================
 
-" let g:clang_user_options='|| exit 0'
-" let g:clang_complete_auto = 1
-" let g:clang_complete_copen = 1
-" let g:clang_debug = 1
-" let g:clang_use_library = 1
+
+let g:clang_complete_auto = 1
+let g:clang_complete_copen = 1
+let g:clang_debug = 1
+let g:clang_use_library = 1
 
 " ==================================================
 " END OF CLANG_COMPLETE STUFF
@@ -144,6 +150,18 @@ noremap <leader>l :ls<CR>:b<space>
 " au BufWinEnter * silent loadview
 
 
+" ==================================================
+" MISC PROGRAMMY STUFF
+" ==================================================
+
+set tags=./tags,tags;
+
+" ==================================================
+" END OF MISC PROGRAMMY STUFF
+" ==================================================
+
+
+set vb t_vb=  " turn off that damn bell
 set tw=74			" wrap text at the 74th column
 set si				" sticky autoindent
 set ts=2			" set tabstops at 2
@@ -169,6 +187,7 @@ if has('macunix')
     " Key command: 'CMD+1 s' for Safari, 'CMD+1 f' for Firefox
     noremap <silent> <D-1>f :exe ':silent !open -a /Applications/Firefox.app %'<CR>"
     noremap <silent> <D-1>s :exe ':silent !open -a /Applications/Safari.app %'<CR>"
+    let g:clang_library_path = '/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/lib'
 elseif has('win32')
     " For Win32 GUI: remove 't' flag from 'guioptions': no tearoff menu entries
     " let &guioptions = substitute(&guioptions, "t", "", "g")
