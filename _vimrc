@@ -12,7 +12,7 @@ filetype indent on
 filetype plugin on
 
 set background=light
-set lines=50
+"set lines=50
 
 " add a column indicator
 set cul cuc 
