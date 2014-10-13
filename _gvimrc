@@ -20,6 +20,7 @@
 "set guifont=vt100:h12:cANSI
 " guioption r is right scrollbar
 set guioptions=er
+set guioptions-=mT
 set co=100
 set lines=50
 set nu

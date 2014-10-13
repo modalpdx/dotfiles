@@ -14,6 +14,9 @@ filetype plugin on
 set background=light
 "set lines=50
 
+" add a column indicator
+" set cul cuc 
+
 " ==================================================
 " SCRATCH BUFFER STUFF
 " ==================================================
@@ -137,7 +140,6 @@ nmap <Leader>[ gT
 " CLANG_COMPLETE STUFF
 " ==================================================
 
-
 let g:clang_complete_auto = 1
 let g:clang_complete_copen = 1
 let g:clang_debug = 1
@@ -196,7 +198,7 @@ elseif has('win32')
     "set guifont=-schumacher-clean-medium-r-normal-*-*-130-*-*-c-*-iso646.1991-irv
 elseif has('unix')
     "yeah, this guifont thing should go in gvimrc instead
-    set guifont=Ubuntu\ Mono\ 12
+    "set guifont=Ubuntu\ Mono\ 12
 endif
 
 " Don't use Ex mode, use Q for formatting
@@ -328,7 +330,7 @@ if &term =~ "xterm.*"
   map Om  -
   map Ok  +
   map Ol  +
-  map OM  
+  "map OM  
   map Ow  7
   map Ox  8
   map Oy  9
@@ -347,7 +349,7 @@ if &term =~ "xterm.*"
   map! Om  -
   map! Ok  +
   map! Ol  +
-  map! OM  
+  "map! OM  
   map! Ow  7
   map! Ox  8
   map! Oy  9
