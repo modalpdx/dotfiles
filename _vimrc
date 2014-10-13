@@ -14,9 +14,6 @@ filetype plugin on
 set background=light
 "set lines=50
 
-" add a column indicator
-set cul cuc 
-
 " ==================================================
 " SCRATCH BUFFER STUFF
 " ==================================================
@@ -111,11 +108,11 @@ let g:netrw_keepdir = 0
 
 " Hit enter in the file browser to open the selected
 " file with :vsplit to the right of the browser.
-let g:netrw_browse_split = 4
-let g:netrw_altv = 1
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
 
-" Load files in the same window as netrw
-" let g:netrw_browse_split = 0
+" Load files in the same window as netrw, like emacs dired does by default
+let g:netrw_browse_split = 0
 
 " Default to tree mode
 let g:netrw_liststyle=3
