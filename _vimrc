@@ -1,7 +1,27 @@
 set nocompatible
 
-call pathogen#infect()
-call pathogen#helptags()
+" Vundle stuff
+filetype off
+set rtp+=~/.vim/bundle/vundle/
+call vundle#rc()
+
+" Vundle installs the following plugins/bundles
+" LightLine status line beautifier
+Plugin 'itchyny/lightline.vim'
+" UltiSnips: Track the engine.
+Plugin 'SirVer/ultisnips'
+" UltiSnips: Snippets are separated from the engine. Add this if you want them:
+Plugin 'honza/vim-snippets'
+" YouCompleteMe code completion
+Plugin 'Valloric/YouCompleteMe'
+" TwitVim
+Plugin 'vim-scripts/TwitVim'
+let twitvim_enable_python = 1
+let twitvim_browser_cmd = 'chromium-browser'
+
+" Pathogen stuff (trying Vundle for now)
+"call pathogen#infect()
+"call pathogen#helptags()
 
 syntax on
 " Load SCSS syntax
@@ -16,6 +36,52 @@ set background=light
 
 " add a column indicator
 " set cul cuc 
+
+
+" ==================================================
+" ULTISNIPS STUFF
+" ==================================================
+
+" Trigger configuration. Do not use <tab> if you use https://github.com/Valloric/YouCompleteMe.
+let g:UltiSnipsExpandTrigger="<tab>"
+let g:UltiSnipsJumpForwardTrigger="<c-b>"
+let g:UltiSnipsJumpBackwardTrigger="<c-z>"
+
+" If you want :UltiSnipsEdit to split your window.
+let g:UltiSnipsEditSplit="vertical"
+
+" ==================================================
+" END OF ULTISNIPS STUFF
+" ==================================================
+
+" ==================================================
+" YOUCOMPLETEME STUFF
+" ==================================================
+
+" TAB is used by UltiSnips
+" let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
+let g:ycm_key_list_select_completion = ['<enter>', '<Down>']
+let g:ycm_key_list_previous_completion = ['<S-enter>', '<Up>']
+
+" ==================================================
+" END OF YOUCOMPLETEME STUFF
+" ==================================================
+
+" ==================================================
+" LIGHTLINE STUFF
+" ==================================================
+
+let g:lightline = {
+    \ 'colorscheme': 'jellybeans',
+    \ }
+
+set laststatus=2        " always have a status line
+set statusline=         " start with a fresh statusline (for reloads)
+
+" ==================================================
+" END OF LIGHTLINE STUFF
+" ==================================================
 
 " ==================================================
 " SCRATCH BUFFER STUFF
@@ -46,36 +112,36 @@ nmap <C-S-s> :call NewScratch()<CR>
 " Color scheme
 colo jellybeans
 
-set laststatus=2        " always have a status line
-set statusline=         " start with a fresh statusline (for reloads)
-set statusline=\ %2*%F\ %3*%m%r%h%w\ %1*(^E:Files)\ %=%1*[\ %2*FORMAT=%{&ff}\ %1*][\ %2*TYPE=%Y\ %1*][\ %2*line\ %02l\ (%p%%)\ %1*]\ 
-
-" Mode Indication 
-function! InsertStatuslineColor(mode)
-  hi statusline ctermbg=1 guibg=#BF9B6E guibg=#83BFB4
-  hi User1 ctermbg=1 ctermfg=15 guibg=#83BFB4 guifg=#53897D
-  hi User2 ctermbg=1 ctermfg=15 guibg=#83BFB4
-  hi User3 ctermbg=1 ctermfg=15 guibg=#83BFB4 guifg=#990000
-endfunction
-
-function! InsertLeaveActions()
-  hi statusline ctermbg=7 guibg=#BF9B6E
-  hi User1 ctermbg=7 ctermfg=0 guibg=#BF9B6E guifg=#9B7D5A
-  hi User2 ctermbg=7 ctermfg=0 guibg=#BF9B6E
-  hi User3 ctermbg=7 ctermfg=1 guibg=#BF9B6E
-endfunction
-
-" statusline color schemes
-hi statusline ctermbg=7 guibg=#BF9B6E
-hi User1 ctermbg=7 ctermfg=0 guibg=#BF9B6E guifg=#9B7D5A
-hi User2 ctermbg=7 ctermfg=0 guibg=#BF9B6E guifg=#FFFCDF
-hi User3 ctermbg=7 ctermfg=1 guibg=#BF9B6E guifg=#990000
-
-au InsertEnter * call InsertStatuslineColor(v:insertmode)
-au InsertLeave * call InsertLeaveActions()
-
-" to handle exiting insert mode via a control-C
-inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
+"set laststatus=2        " always have a status line
+"set statusline=         " start with a fresh statusline (for reloads)
+"set statusline=\ %2*%F\ %3*%m%r%h%w\ %1*(^E:Files)\ %=%1*[\ %2*FORMAT=%{&ff}\ %1*][\ %2*TYPE=%Y\ %1*][\ %2*line\ %02l\ (%p%%)\ %1*]\ 
+"
+"" Mode Indication 
+"function! InsertStatuslineColor(mode)
+"  hi statusline ctermbg=1 guibg=#BF9B6E guibg=#83BFB4
+"  hi User1 ctermbg=1 ctermfg=15 guibg=#83BFB4 guifg=#53897D
+"  hi User2 ctermbg=1 ctermfg=15 guibg=#83BFB4
+"  hi User3 ctermbg=1 ctermfg=15 guibg=#83BFB4 guifg=#990000
+"endfunction
+"
+"function! InsertLeaveActions()
+"  hi statusline ctermbg=7 guibg=#BF9B6E
+"  hi User1 ctermbg=7 ctermfg=0 guibg=#BF9B6E guifg=#9B7D5A
+"  hi User2 ctermbg=7 ctermfg=0 guibg=#BF9B6E
+"  hi User3 ctermbg=7 ctermfg=1 guibg=#BF9B6E
+"endfunction
+"
+"" statusline color schemes
+"hi statusline ctermbg=7 guibg=#BF9B6E
+"hi User1 ctermbg=7 ctermfg=0 guibg=#BF9B6E guifg=#9B7D5A
+"hi User2 ctermbg=7 ctermfg=0 guibg=#BF9B6E guifg=#FFFCDF
+"hi User3 ctermbg=7 ctermfg=1 guibg=#BF9B6E guifg=#990000
+"
+"au InsertEnter * call InsertStatuslineColor(v:insertmode)
+"au InsertLeave * call InsertLeaveActions()
+"
+"" to handle exiting insert mode via a control-C
+"inoremap <c-c> <c-o>:call InsertLeaveActions()<cr><c-c>
 
 " ==================================================
 " END OF COLOR STUFF
@@ -140,10 +206,10 @@ nmap <Leader>[ gT
 " CLANG_COMPLETE STUFF
 " ==================================================
 
-let g:clang_complete_auto = 1
-let g:clang_complete_copen = 1
-let g:clang_debug = 1
-let g:clang_use_library = 1
+"let g:clang_complete_auto = 1
+"let g:clang_complete_copen = 1
+"let g:clang_debug = 1
+"let g:clang_use_library = 1
 
 " ==================================================
 " END OF CLANG_COMPLETE STUFF
