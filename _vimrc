@@ -3,9 +3,12 @@ set nocompatible
 " Vundle stuff
 filetype off
 set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#rc()
 
-" Vundle installs the following plugins/bundles
+call vundle#begin()
+
+" Vundle installs the following plugins/bundles:
+" let Vundle manage Vundle
+Plugin 'gmarik/Vundle.vim'
 " LightLine status line beautifier
 Plugin 'itchyny/lightline.vim'
 " UltiSnips: Track the engine.
@@ -33,6 +36,8 @@ let twitvim_browser_cmd = 'chromium-browser'
 syntax on
 " Load SCSS syntax
 au BufRead,BufNewFile *.scss set filetype=scss
+
+call vundle#end()
 
 filetype on
 filetype indent on
