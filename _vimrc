@@ -2,7 +2,7 @@ set nocompatible
 
 " Vundle stuff
 filetype off
-set rtp+=~/.vim/bundle/vundle/
+set rtp+=~/.vim/bundle/Vundle.vim
 call vundle#rc()
 
 " Vundle installs the following plugins/bundles
@@ -12,8 +12,15 @@ Plugin 'itchyny/lightline.vim'
 Plugin 'SirVer/ultisnips'
 " UltiSnips: Snippets are separated from the engine. Add this if you want them:
 Plugin 'honza/vim-snippets'
+" NeoComplete...damn thing WORKS and it isn't a PAIN to install like YCM
+Plugin 'Shougo/neocomplete.vim'
+
+"Plugin 'rdnetto/YCM-Generator'
 " YouCompleteMe code completion
-Plugin 'Valloric/YouCompleteMe'
+"Plugin 'Valloric/YouCompleteMe'
+" YCM-Generator
+"Plugin 'rdnetto/YCM-Generator'
+
 " TwitVim
 Plugin 'vim-scripts/TwitVim'
 let twitvim_enable_python = 1
@@ -55,14 +62,26 @@ let g:UltiSnipsEditSplit="vertical"
 " ==================================================
 
 " ==================================================
+" NEOCOMPLETE STUFF
+" ==================================================
+
+" Enable NeoComplete automagically
+let g:neocomplete#enable_at_startup = 1
+
+" ==================================================
+" END OF NEOCOMPLETE STUFF
+" ==================================================
+
+" ==================================================
 " YOUCOMPLETEME STUFF
 " ==================================================
 
 " TAB is used by UltiSnips
 " let g:ycm_key_list_select_completion = ['<TAB>', '<Down>']
 " let g:ycm_key_list_previous_completion = ['<S-TAB>', '<Up>']
-let g:ycm_key_list_select_completion = ['<enter>', '<Down>']
-let g:ycm_key_list_previous_completion = ['<S-enter>', '<Up>']
+" let g:ycm_key_list_select_completion = ['<enter>', '<Down>']
+" let g:ycm_key_list_previous_completion = ['<S-enter>', '<Up>']
+" let g:ycm_global_ycm_extra_conf = '~/.ycm_extra_conf.py'
 
 " ==================================================
 " END OF YOUCOMPLETEME STUFF
