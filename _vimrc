@@ -2,7 +2,7 @@ set nocompatible
 
 " Vundle stuff
 filetype off
-set rtp+=~/.vim/bundle/Vundle.vim
+set rtp+=~/.config/nvim/bundle/Vundle.vim
 
 call vundle#begin()
 
@@ -28,6 +28,12 @@ Plugin 'Shougo/neocomplete.vim'
 Plugin 'vim-scripts/TwitVim'
 let twitvim_enable_python = 1
 let twitvim_browser_cmd = 'chromium-browser'
+
+" Set up HP LaserJet 5L to be the printer. ":hardcopy" fails w/o this.
+" This was set up via GNOME 3's settings panel (use that name).
+" Also, change from default A4 paper.
+set pdev=HP-LaserJet-5L
+set printoptions=paper:letter,duplex:off
 
 " Pathogen stuff (trying Vundle for now)
 "call pathogen#infect()
