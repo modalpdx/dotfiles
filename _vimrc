@@ -2,7 +2,8 @@ set nocompatible
 
 " Vundle stuff
 filetype off
-set rtp+=~/.config/nvim/bundle/Vundle.vim
+"set rtp+=~/.config/nvim/bundle/Vundle.vim
+set rtp+=~/.vim/bundle/Vundle.vim
 
 call vundle#begin()
 
@@ -48,6 +49,8 @@ call vundle#end()
 filetype on
 filetype indent on
 filetype plugin on
+
+set number
 
 set background=light
 "set lines=50
