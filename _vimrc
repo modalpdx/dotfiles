@@ -19,6 +19,8 @@ Plugin 'honza/vim-snippets'
 " NeoComplete...damn thing WORKS and it isn't a PAIN to install like YCM
 Plugin 'Shougo/neocomplete.vim'
 
+"Plugin 'davidhalter/jedi-vim'     " jedi-vim
+
 "Plugin 'rdnetto/YCM-Generator'
 " YouCompleteMe code completion
 "Plugin 'Valloric/YouCompleteMe'
@@ -144,6 +146,9 @@ nmap <C-S-s> :call NewScratch()<CR>
 
 " Color scheme
 colo jellybeans
+
+" To make Vim colors appear correctly in tmux
+set t_Co=256
 
 "set laststatus=2        " always have a status line
 "set statusline=         " start with a fresh statusline (for reloads)
